@@ -4,6 +4,8 @@ ARG dict_version=2.9.0-11.el7
 ARG expect_version=5.45-14.el7_1
 ARG krb5_version=1.15.1-19.el7
 
+COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+
 RUN yum -y --setopt=tsflags=nodocs update \
  && yum -y --setopt=tsflags=nodocs install \
     cracklib-dicts-${dict_version} \
